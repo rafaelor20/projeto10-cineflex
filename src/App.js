@@ -3,7 +3,6 @@ import axios from 'axios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import TopBar from './TopBar';
-//import movies from "./moviesLst"
 import MoviesContainer from './moviesContainer';
 
 function App() {
