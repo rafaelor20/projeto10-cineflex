@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export default function TopBar(){
     return (
         <DivTopBar>
-            <FontTopBar>CINEFLEX</FontTopBar>
+            <FontTopBar>CINEFLEX</FontTopBar>            
         </DivTopBar>
+        
     )
 }
 
@@ -27,3 +28,4 @@ align-items: center;
 text-align: center;
 color: #E8833A;
 `
+
