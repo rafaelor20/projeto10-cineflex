@@ -1,9 +1,15 @@
 import styled from 'styled-components';
+import axios from 'axios';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from 'react';
 import TopBar from './TopBar';
-import movies from "./moviesLst"
+//import movies from "./moviesLst"
 import MoviesContainer from './moviesContainer';
 
 function App() {
+  const [movies,setMovies] = useState([]);
+  const request = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
+  request.then(x => {setMovies(x.data)});
   return (
     <div className="App">
       <TopBar />

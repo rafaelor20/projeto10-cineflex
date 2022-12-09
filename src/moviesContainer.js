@@ -2,7 +2,6 @@ import Movie from "./movie";
 import styled from "styled-components";
 
 export default function MoviesContainer(lst){
-    console.log(lst);
     return (
         <MoviesBox>{lst.movies.map(Movie)}</MoviesBox>
     )
