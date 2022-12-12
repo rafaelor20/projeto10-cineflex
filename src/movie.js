@@ -1,10 +1,15 @@
 import styled from "styled-components"
+import {Link} from "react-router-dom"
 
 export default function Movie(movie){
+    const id = movie.id;
     return (
-        <MovieBox>
-            <MovieImg src={movie.posterURL}/>
-        </MovieBox>
+        <Link to={`/sessoes/${id}`}>
+            <MovieBox>
+                <MovieImg src={movie.posterURL}/>
+            </MovieBox>
+        </Link>
+        
     )
 }
 

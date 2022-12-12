@@ -1,9 +1,9 @@
 import Movie from "./movie";
 import styled from "styled-components";
 
-export default function MoviesContainer(lst){
+export default function MoviesContainer(props){
     return (
-        <MoviesBox>{lst.movies.map(Movie)}</MoviesBox>
+        <MoviesBox>{props.movies.map(Movie)}</MoviesBox>
     )
     
 }
