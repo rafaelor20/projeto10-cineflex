@@ -1,47 +1,33 @@
-import styled from 'styled-components';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TopBar from './TopBar';
+import Objective from './objective';
 import MoviesContainer from './moviesContainer';
+import Sessions from './sessions';
+
 
 function App() {
-  const [movies,setMovies] = useState([]);
-  const request = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
-  request.then(x => {setMovies(x.data)});
+  const [movies, setMovies] = useState([]);
+  const [objective, setObjective] = useState("Selecione o filme")
+  useEffect(() => {
+    const request = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
+    request.then(server => { setMovies(server.data) });
+  })
+
   return (
     <div className="App">
       <TopBar />
-      <Objective>
-        <FontObjective>
-          Selecione o horário
-        </FontObjective>
-      </Objective>
-      <MoviesContainer movies={movies}></MoviesContainer>
+      <Objective content={objective}></Objective>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MoviesContainer movies={movies} />} />
+          <Route path="/sessoes/:id" element={<Sessions content={setObjective} />} />
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
 
 export default App;
-
-const Objective = styled.div`
-width: 100%;
-height: 100px;
-display: flex;
-justify-content: center;
-`
-
-const FontObjective = styled.p`
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 28px;
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.04em;
-color: #293845;
-`
-
-
