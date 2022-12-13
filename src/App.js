@@ -5,6 +5,8 @@ import TopBar from './TopBar';
 import Objective from './objective';
 import MoviesContainer from './moviesContainer';
 import Sessions from './sessions';
+import Seats from './seats'
+import Sucess from './sucess';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MoviesContainer movies={movies} />} />
           <Route path="/sessoes/:id" element={<Sessions content={setObjective} />} />
+          <Route path="/assentos/:id" element={<Seats content={setObjective}/>}/>
+          <Route path="/sucesso" element={<Sucess content={setObjective}/>}/>
         </Routes>
       </BrowserRouter>
 

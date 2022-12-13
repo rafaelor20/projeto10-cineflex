@@ -5,11 +5,10 @@ export default function Movie(movie){
     const id = movie.id;
     return (
         <Link to={`/sessoes/${id}`}>
-            <MovieBox>
+            <MovieBox data-test="movie">
                 <MovieImg src={movie.posterURL}/>
             </MovieBox>
         </Link>
-        
     )
 }
 
