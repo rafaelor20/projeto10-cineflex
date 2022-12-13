@@ -5,13 +5,6 @@ import { useParams, Link } from 'react-router-dom';
 import SeatsHelper from './seatsHelper';
 import DisplaySeats from './displaySeats';
 
-
-//const colorSelected = "#0E7D71";
-//const colorAvailable = "#7B8B99";
-//const colorNotAvailable = "#F7C52B";
-
-
-
 export default function Seats(props){
     const setObjective = props.content;
     setObjective("Selecione o(s) assento(s)");
@@ -34,7 +27,7 @@ export default function Seats(props){
             <SeatsHelper/>
         </SeatsContainer>
         <Inputs buy={propsBuy}/>
-        <Link to={`/Rota/sucesso`}><GetSeats data-identifier="book-seat-btn" onClick={()=>requestSeats(propsBuy)} >Reservar assento(s)</GetSeats></Link>   
+        <Link to={`/sucesso`}><GetSeats data-identifier="book-seat-btn" onClick={()=>requestSeats(propsBuy)} >Reservar assento(s)</GetSeats></Link>   
         <BottomBar data-identifier="footer" id={id}/>
         </>
     );
@@ -45,7 +38,6 @@ function requestSeats(props){
     const url = "https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many";
     const request = axios.post(url, props.buy);
     request.then(console.log("Ok!"));
-    request.catch(console.log("Error!"));
 }
 
 function Inputs(props) {

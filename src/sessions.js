@@ -53,7 +53,7 @@ function Day(props) {
 
 function Hours(props) {
     return (
-        <Link to={`/Rota/assentos/${idHelper}`}>
+        <Link to={`/assentos/${idHelper}`}>
             <HourDiv data-identifier="showtime">
                 <FontHours>{props.name}</FontHours>
             </HourDiv>
