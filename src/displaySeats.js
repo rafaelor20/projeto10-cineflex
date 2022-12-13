@@ -10,7 +10,7 @@ export default function DisplaySeats(props){
 
 function Seat(lst, props){
     return(
-        <SeatContainer onClick={()=>(chooseSeat(lst.name, this.props.buy))}>
+        <SeatContainer data-identifier="seat" onClick={()=>(chooseSeat(lst.name, this.props.buy))}>
             <FontSeat>
                 {lst.name}
             </FontSeat>

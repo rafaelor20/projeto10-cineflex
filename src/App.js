@@ -24,9 +24,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MoviesContainer movies={movies} />} />
-          <Route path="/sessoes/:id" element={<Sessions content={setObjective} />} />
-          <Route path="/assentos/:id" element={<Seats content={setObjective}/>}/>
-          <Route path="/sucesso" element={<Sucess content={setObjective}/>}/>
+          <Route path="/Rota/sessoes/:id" element={<Sessions content={setObjective} />} />
+          <Route path="/Rota/assentos/:id" element={<Seats content={setObjective}/>}/>
+          <Route path="/Rota/sucesso" element={<Sucess content={setObjective}/>}/>
         </Routes>
       </BrowserRouter>
 

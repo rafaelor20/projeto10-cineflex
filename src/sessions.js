@@ -43,7 +43,7 @@ function Days(props) {
 
 function Day(props) {
     return (
-        <div data-test="movie-day">
+        <div data-identifier="movie-day">
             <FontDay>{props.weekday} - {props.date}</FontDay>
             <HoursDiv>{props.showtimes.map(Hours)}</HoursDiv>
         </div>
@@ -53,8 +53,8 @@ function Day(props) {
 
 function Hours(props) {
     return (
-        <Link to={`/assentos/${idHelper}`}>
-            <HourDiv data-test="showtime">
+        <Link to={`/Rota/assentos/${idHelper}`}>
+            <HourDiv data-identifier="showtime">
                 <FontHours>{props.name}</FontHours>
             </HourDiv>
         </Link>
@@ -65,7 +65,7 @@ function Hours(props) {
 function BottomBar(props){
     const movie = props.movie;
     return(
-        <BottomBarDiv>
+        <BottomBarDiv data-identifier="footer">
             <ImgContainer><BottomImg src={movie.posterURL}></BottomImg></ImgContainer>
             <FontBottom>{movie.title}</FontBottom>
         </BottomBarDiv>

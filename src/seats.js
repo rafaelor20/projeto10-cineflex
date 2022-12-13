@@ -34,8 +34,8 @@ export default function Seats(props){
             <SeatsHelper/>
         </SeatsContainer>
         <Inputs buy={propsBuy}/>
-        <Link to={`/sucesso`}><GetSeats onClick={()=>requestSeats(propsBuy)} >Reservar assento(s)</GetSeats></Link>   
-        <BottomBar id={id}/>
+        <Link to={`/Rota/sucesso`}><GetSeats data-identifier="book-seat-btn" onClick={()=>requestSeats(propsBuy)} >Reservar assento(s)</GetSeats></Link>   
+        <BottomBar data-identifier="footer" id={id}/>
         </>
     );
 }
@@ -52,9 +52,9 @@ function Inputs(props) {
     return (
         <InputContainer>
             <Font>Nome do comprador:</Font>
-            <InputBox placeholder="Digite seu nome..." onChange={e => updateName(e.target.value, props.buy)}></InputBox>
+            <InputBox data-identifier="client-name" placeholder="Digite seu nome..." onChange={e => updateName(e.target.value, props.buy)}></InputBox>
             <Font>CPF do comprador:</Font>
-            <InputBox placeholder="Digite seu CPF..." onChange={e => updateCpf(e.target.value, props.buy)}></InputBox>
+            <InputBox data-identifier="client-cpf" placeholder="Digite seu CPF..." onChange={e => updateCpf(e.target.value, props.buy)}></InputBox>
         </InputContainer>
     )
 }
