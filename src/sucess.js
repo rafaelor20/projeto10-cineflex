@@ -8,19 +8,24 @@ export default function Sucess(props){
         <Container>
             <BoxText>
                 <TitleBox>Filme e sessão</TitleBox>
-                <ContentBox>Enola Holmes 24/06/2021 15:00</ContentBox>
+                <ContentBox>{props.session.movie.title} {props.session.day.date} {props.session.name}</ContentBox>
             </BoxText>
             <BoxText>
                 <TitleBox>Ingressos</TitleBox>
-                <ContentBox>Assento 15 Assento 16</ContentBox>
+                {props.buy.ids.map(Seat)}
             </BoxText>
             <BoxText>
                 <TitleBox>Comprador</TitleBox>
-                <ContentBox>Nome: João da Silva Sauro CPF: 123.456.789-10</ContentBox>
+                <ContentBox>Nome: {props.buy.name} </ContentBox>
+                <ContentBox>CPF: {props.buy.cpf}</ContentBox>
             </BoxText>
             <Link to={"/"}><Return><FontReturn>Voltar pra Home</FontReturn></Return></Link>
         </Container>
     );
+}
+
+function Seat(num){
+    return (<ContentBox>Assento {num}</ContentBox>);
 }
 
 const Container = styled.div`

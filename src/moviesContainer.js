@@ -5,7 +5,6 @@ export default function MoviesContainer(props){
     return (
         <MoviesBox>{props.movies.map(Movie)}</MoviesBox>
     )
-    
 }
 
 const MoviesBox = styled.div`

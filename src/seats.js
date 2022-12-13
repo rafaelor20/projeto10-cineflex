@@ -8,13 +8,9 @@ import DisplaySeats from './displaySeats';
 export default function Seats(props){
     const setObjective = props.content;
     setObjective("Selecione o(s) assento(s)");
-    const [session, setSession] = useState(sessionExample);
-    const [buy, setBuy] = useState({
-        ids: [],
-        name: "",
-        cpf: ""
-    });
-    const propsBuy = {buy: buy, setBuy: setBuy};
+    const session = props.session;
+    const setSession = props.setSession;
+    const propsBuy = {buy: props.buy, setBuy: props.setBuy};
     const id = useParams().id;
     useEffect(() => {
         const request = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${id}/seats`);
@@ -34,7 +30,6 @@ export default function Seats(props){
 }
 
 function requestSeats(props){
-    console.log(props);
     const url = "https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many";
     const request = axios.post(url, props.buy);
     request.then(console.log("Ok!"));
