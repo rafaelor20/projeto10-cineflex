@@ -16,6 +16,7 @@ export default function Seats(props){
         const request = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${id}/seats`);
         request.then(server => { setSession(server.data) });
     });
+    console.log(session);
     return (
         <>
         <SeatsContainer>

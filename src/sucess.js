@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export default function Sucess(props){
+    console.log(props);
     const setObjective = props.content;
     setObjective("Pedido feito com sucesso!");
     return (
